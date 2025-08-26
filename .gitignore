@@ -1,0 +1,78 @@
+# ----------------------------
+# Python
+# ----------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.manifest
+*.spec
+
+# ----------------------------
+# Virtual environment
+# ----------------------------
+venv/
+.env/
+.env.*  # любые файлы окружения
+.venv/
+
+# ----------------------------
+# IDEs
+# ----------------------------
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VSCode
+.vscode/
+
+# ----------------------------
+# FastAPI / general logs
+# ----------------------------
+*.log
+*.sqlite3
+*.db
+*.db-journal
+*.bak
+*.swp
+*.swo
+
+# ----------------------------
+# PostgreSQL
+# ----------------------------
+*.psql
+pgdata/
+*.dump
+
+# ----------------------------
+# Byte-compiled / cache
+# ----------------------------
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# ----------------------------
+# OS-specific
+# ----------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+.cache/
