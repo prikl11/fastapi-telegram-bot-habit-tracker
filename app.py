@@ -30,6 +30,6 @@ def create_habit_route(db: SessionDep, habit: HabitCreate, user_id: int):
 def update_habit_route(db: SessionDep, habit_id: int, habit: HabitUpdate, user_id: int):
     return update_habit(db, habit_id, habit, user_id)
 
-@app.delete("/habits/{habit_id}", response_model=HabitOut)
+@app.delete("/habits/{habit_id}")
 def delete_habit_route(db: SessionDep, habit_id: int, user_id: int):
     return delete_habit(db, habit_id, user_id)
