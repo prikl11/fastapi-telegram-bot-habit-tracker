@@ -1,13 +1,13 @@
 from sqlalchemy.orm import relationship
 from database import Base
-from sqlalchemy import Column, Integer, Text, String, Enum, DateTime, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, Text, String, Enum, DateTime, Boolean, ForeignKey, BigInteger
 from schemas import Frequency
 
 class Users(Base):
     __tablename__ = "users"
 
     id = Column(Integer, primary_key=True, index=True)
-    telegram_id = Column(Integer, index=True, unique=True)
+    telegram_id = Column(BigInteger, index=True, unique=True)
     username = Column(String(50), index=True)
 
     habits = relationship("Habits", back_populates="user")
