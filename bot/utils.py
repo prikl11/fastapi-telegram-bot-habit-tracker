@@ -22,7 +22,7 @@ async def start_command(message: Message):
 
     db = SessionLocal()
     try:
-        user = db.query(Users).filter(Users.user_id == user_id).first()
+        user = db.query(Users).filter(Users.telegram_id == user_id).first()
         if not user:
             user = Users(user_id=user_id, username=username)
             db.add(user)
