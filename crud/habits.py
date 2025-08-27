@@ -39,6 +39,7 @@ def update_habit(db: Session, habit_id: int, habit: HabitUpdate, user_id: int):
     return existing_habit
 
 def delete_habit(db: Session, habit_id: int, user_id: int):
+    user = db.query(Users).filter(Users.telegram_id == user_id).first()
     habit = db.query(Habits).filter(Habits.id == habit_id,
                                     Habits.user_id == user_id).first()
     if habit is None:
