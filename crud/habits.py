@@ -41,7 +41,7 @@ def update_habit(db: Session, habit_id: int, habit: HabitUpdate, user_id: int):
 def delete_habit(db: Session, habit_id: int, user_id: int):
     user = db.query(Users).filter(Users.telegram_id == user_id).first()
     habit = db.query(Habits).filter(Habits.id == habit_id,
-                                    Habits.user_id == user_id).first()
+                                    Habits.user_id == user.id).first()
     if habit is None:
         raise HTTPException(status_code=404, detail="Habit not found")
 
