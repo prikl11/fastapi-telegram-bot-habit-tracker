@@ -21,7 +21,7 @@ def read_habits(db: Session, user_id: int):
     return habits
 
 def update_habit(db: Session, habit_id: int, habit: HabitUpdate, user_id: int):
-    existing_habit = db.query(Habits).filter(Habits.title == habit.title,
+    existing_habit = db.query(Habits).filter(Habits.id == habit_id,
                                              Habits.user_id == user_id).first()
     if not existing_habit:
         raise HTTPException(status_code=404, detail="Habit not found")
