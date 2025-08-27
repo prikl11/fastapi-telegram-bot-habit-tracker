@@ -20,7 +20,7 @@ class HabitOut(BaseModel):
     frequency: Frequency
     times_per_day: int
     remind_at: datetime
-    streak: int
-    longest_streak: int
-    created_at: datetime
+    streak: int | None = None
+    longest_streak: int | None = None
+    created_at: datetime | None = None
     is_active: bool
