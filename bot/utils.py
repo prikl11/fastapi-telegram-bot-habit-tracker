@@ -17,14 +17,14 @@ dp = Dispatcher()
 
 @dp.message(F.text == "/start")
 async def start_command(message: Message):
-    telegram_id = message.from_user.id
+    user_id = message.from_user.id
     username = message.from_user.username
 
     db = SessionLocal()
     try:
-        user = db.query(Users).filter(Users.telegram_id == telegram_id).first()
+        user = db.query(Users).filter(Users.user_id == user_id).first()
         if not user:
-            user = Users(telegram_id=telegram_id, username=username)
+            user = Users(user_id=user_id, username=username)
             db.add(user)
             db.commit()
             db.refresh(user)
